@@ -1,17 +1,15 @@
-<div class="hero-unit">
+<% if user_signed_in? %>
+	<h1> You're logged in! </h1>
+<% else %>
 
-	<h1> Welcome to Pixelove!</h1>
-	<p>
-		You've found the home page.
-
-		<%= link_to "one month rails", "http://www.onemonthrails.com" %>
-
-	</p>
-
-	<p> 
-		<a href="#" class="btn btn-primary btn-large"> Sign up now! </a> 
-
-	</p>
-
-
-</div>		
+	<div class="hero-unit">
+		<h1> Welcome to Pixelove!</h1>
+		<p>
+			You've found the home page.
+			<%= link_to "one month rails", "http://www.onemonthrails.com" %>
+		</p>
+		<p> 
+			<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+		</p>
+	</div>	
+<% end %>	
